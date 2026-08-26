@@ -3,9 +3,6 @@
 # Write an Object-Oriented Python program for Kaizentrix Global Solutions
 # to manage Visitor Check-In, Check-Out, Guidelines, and Exit.
 
-import sys
-
-
 class Manage:
     def __init__(self):
         self.visitor_id = ""
