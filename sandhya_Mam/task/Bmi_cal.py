@@ -25,3 +25,17 @@ height = float(input("Enter the Height (in cm): "))
 
 bmi_val, status = calculate_bmi(weight, height) 
 print(f"BMI: {bmi_val} ({status})")  
+
+
+# def cal_bmi(weight, height):
+#     Bmi=weight/(height*height)
+#     return Bmi
+
+# w=float(input("enter the weight of the body (Kg): "))
+# h=float(input("enter the height [meter] : "))
+
+# result=cal_bmi(w,h)
+
+# print("output :", result)
+
+
