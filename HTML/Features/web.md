@@ -81,8 +81,51 @@ Text flormating tags
 
 
 
+2. Underline tag:<u>------</u>
+    ex: <p><u>Hello</u></p>
+
+    o/p : Hello
+        ----------
+
+3. Quotation tag: <q>----</q>
+        <p> <q>Hello</q></p>
+        o/p : "hello"
 
 
+4. Blockquote tag: <blockquote>---</blockquote>
+
+
+5. preformatted text tag:( for as it is)
+    <pre>------</pre>
+
+6. subscript tag:( only for below)
+    <sub>--------</sub>
+    ex:  h2O
+    <p> H<sub>2</sub>O</p>   ---> h20
+
+7. Superscript:(only for above)
+    <sup>------</sup>
+    eg:  a2 +b2=c2
+
+    <p> a <sup>2</sup>  + b <sup>2</sup>  = c<sup>2</sup>
+
+
+8. abbreviation:
+     <abbr>-----------</abbr>
+     mandatory attritube for a abbraviation
+    tag is "tittle"
+    
+9. anchor tag:
+    <a>------------</a>
+    Mandatory attributes are: href
+
+    <a href= " urllink">
+    <abbr title="Water"> H <sub>2</sub> O</abbr>
+
+10. img tag:
+    <img   src     =  "car.jpg"    alt       = "myphoto"  height="500px" width="1000px">
+    tag  attribute  path of image  attribute   content
+        mandatory
 
 
 
