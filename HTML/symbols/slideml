@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIAL</title>
+</head>
+<body>
+<center>
+     <p>welcome to KGS</p>
+</center>
+    <p>Kaizentrix <mark>Global</mark> Solutions</p>
+    <bdo dir="rtl">Kaizentrix Global Solutions</bdo>
+    <marquee bgcolor="yellow" textcolor="yellow" behavior="alternate" 
+    direction="left" scrollamount="5%" width="100%">
+      Kaizentrix Global Solutions Is Providing 60% off  &TRADE; &reg;
+    </marquee>
+    <marquee bgcolor="lightblue" textcolor="black"  
+    direction="up" direction="down"scrollamount="5%" width="100%">
+        Kaizentrix Global Solutions Is Providing 60% off &trade; &reg;
+    </marquee>
+
+     <!-- <p> Hello &#64; &hearts;Founded on the Japanese philosophy of "Kaizen" (continuous improvement) and the Latin ideal of "-trix" — an agent who achieves — Kaizentrix Global Solutions</br>
+    was built to be the driving force behind solving the most complex IT challenges of the modern era.
+We are a team of visionary architects, security paranoid engineers, <br>and AI optimists. 
+We believe that technology should be an invisible enabler of business growth, not a source of friction.&trade; &reg;</p> -->
+
+    <p> Hello&#64; &hearts;Founded on the Japanese philosophy of "Kaizen" (continuous improvement) and the Latin ideal of "-trix" — an agent who achieves — Kaizentrix Global Solutions<br>
+    was built to be the driving force behind solving the most complex IT challenges of the modern era.
+    We are a team of visionary architects, security paranoid engineers, <br>and AI optimists. 
+    We believe that technology should be an invisible enabler of business growth, not a source of friction.&trade; &reg;</p>
+</body>
+</html> 
