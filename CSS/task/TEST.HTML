@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search UI</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #294347;
+            font-family: Arial, sans-serif;
+            padding: 13px 14px;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            width: 100%;
+            height: 101px;
+            background-color: white;
+            border-radius: 55px;
+
+            display: flex;
+            align-items: center;
+            padding: 0 34px;
+            gap: 30px;
+        }
+
+        /* Plus */
+        .plus {
+            font-size: 40px;
+            font-weight: 300;
+            color: #222;
+        }
+
+        /* Search text */
+        .search-text {
+            flex: 1;
+            font-size: 28px;
+            color: #aaa;
+        }
+
+        /* Right icons */
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .mic {
+            font-size: 32px;
+            color: #222;
+        }
+
+        .camera {
+            width: 28px;
+            height: 20px;
+            border: 3px solid #222;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .camera::before {
+            content: "";
+            position: absolute;
+            width: 9px;
+            height: 5px;
+            background: #222;
+            top: -7px;
+            left: 7px;
+            border-radius: 3px;
+        }
+
+        .camera::after {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border: 2px solid #222;
+            border-radius: 50%;
+            left: 7px;
+            top: 3px;
+        }
+
+        /* Bottom cards */
+        .cards {
+            display: flex;
+            gap: 26px;
+            margin: 30px 60px 0;
+        }
+
+        .card {
+            width: 50%;
+            height: 102px;
+            background-color: #102f34;
+            border-radius: 28px;
+
+            display: flex;
+            align-items: center;
+            padding: 20px 30px;
+        }
+
+        .card-text h2 {
+            margin: 0 0 8px;
+            font-size: 24px;
+            color: #dcecff;
+        }
+
+        .card-text p {
+            margin: 0;
+            font-size: 21px;
+            color: #c7d8e8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+
+        <div class="plus">+</div>
+
+        <div class="search-text">
+            Ask Google
+        </div>
+
+        <div class="icons">
+            <div class="mic">♩</div>
+            <div class="camera"></div>
+        </div>
+
+    </div>
+
+
+    <!-- Bottom Cards -->
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-text">
+                <h2>Do more with AI Mode</h2>
+                <p>Create, summarize, plan</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-text">
+                <h2>Create images</h2>
+                <p>Reimagine, illustrate, edit</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
