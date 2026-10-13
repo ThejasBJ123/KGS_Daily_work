@@ -1,0 +1,468 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ExpenseFlow | Reports</title>
+
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Material Symbols -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+
+    <style>
+        /* Google Material Symbols */
+        .material-symbols-outlined {
+            font-family: "Material Symbols Outlined";
+            font-weight: normal;
+            font-style: normal;
+            font-size: 22px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-feature-settings: "liga";
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Sidebar icons */
+        .sidebar nav a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        /* Topbar icons */
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .date {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .icon-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background: transparent;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        /* Category icons */
+        .budget-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .budget-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .budget-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* Responsive layout */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 520px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <!-- Brand -->
+        <a class="brand" href="index.html">
+            <span class="logo">E</span>
+            <span>Expense<span>Flow</span></span>
+        </a>
+
+        <!-- Workspace -->
+        <p class="label">WORKSPACE</p>
+
+        <nav>
+            <a href="index.html">
+                <span class="material-symbols-outlined nav-icon">
+                    grid_view
+                </span>
+                Dashboard
+            </a>
+
+            <a href="transactions.html">
+                <span class="material-symbols-outlined nav-icon">
+                    swap_horiz
+                </span>
+                Transactions
+            </a>
+
+            <a href="budgets.html">
+                <span class="material-symbols-outlined nav-icon">
+                    pie_chart
+                </span>
+                Budgets
+            </a>
+
+            <a class="active" href="reports.html">
+                <span class="material-symbols-outlined nav-icon">
+                    bar_chart
+                </span>
+                Reports
+            </a>
+        </nav>
+
+        <!-- Preferences -->
+        <p class="label preferences">PREFERENCES</p>
+
+        <nav>
+            <a href="goals.html">
+                <span class="material-symbols-outlined nav-icon">
+                    savings
+                </span>
+                Savings goals
+            </a>
+
+            <a href="settings.html">
+                <span class="material-symbols-outlined nav-icon">
+                    settings
+                </span>
+                Settings
+            </a>
+        </nav>
+
+        <!-- Sidebar Bottom -->
+        <div class="sidebar-bottom">
+
+            <div class="help">
+
+                <div class="help-icon">
+                    <span class="material-symbols-outlined">
+                        help
+                    </span>
+                </div>
+
+                <strong>Need some help?</strong>
+
+                <p>
+                    Make the most of your money with smart budgeting.
+                </p>
+
+                <a href="budgets.html">
+                    Explore budgets
+                    <span class="material-symbols-outlined">
+                        north_east
+                    </span>
+                </a>
+
+            </div>
+
+            <!-- Profile -->
+            <div class="profile">
+
+                <div class="avatar">TB</div>
+
+                <div>
+                    <strong>Your Profile</strong>
+                    <small>Personal account</small>
+                </div>
+
+                <span class="material-symbols-outlined dots">
+                    more_horiz
+                </span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
+
+        <!-- Topbar -->
+        <header class="topbar">
+
+            <div class="breadcrumb">
+                Pages　/　<strong>Reports</strong>
+            </div>
+
+            <div class="top-actions">
+
+                <span class="date">
+                    <span class="material-symbols-outlined">
+                        calendar_month
+                    </span>
+                    October 2026
+                </span>
+
+                <button class="icon-button"
+                        type="button"
+                        aria-label="Notifications">
+                    <span class="material-symbols-outlined bell">
+                        notifications
+                    </span>
+                </button>
+
+                <span class="avatar">TB</span>
+
+            </div>
+
+        </header>
+
+        <!-- Welcome Section -->
+        <section class="welcome">
+
+            <div>
+                <p class="eyebrow">EXPENSEFLOW WORKSPACE</p>
+
+                <h1>Reports</h1>
+
+                <p class="subtitle">
+                    Manage and review your personal finances.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- ================= SUMMARY CARDS ================= -->
+        <section class="cards">
+
+            <!-- Income -->
+            <article class="card">
+
+                <div class="card-title">
+                    Income
+
+                    <span class="material-symbols-outlined symbol">
+                        trending_up
+                    </span>
+                </div>
+
+                <div class="amount">₹35,000</div>
+
+                <div class="card-foot">
+                    <span class="up">+5.4%</span>
+                    vs last month
+                </div>
+
+            </article>
+
+            <!-- Expenses -->
+            <article class="card">
+
+                <div class="card-title">
+                    Expenses
+
+                    <span class="material-symbols-outlined symbol red-symbol">
+                        trending_up
+                    </span>
+                </div>
+
+                <div class="amount">₹10,500</div>
+
+                <div class="card-foot">
+                    <span class="down">+2.1%</span>
+                    vs last month
+                </div>
+
+            </article>
+
+            <!-- Savings -->
+            <article class="card">
+
+                <div class="card-title">
+                    Savings
+
+                    <span class="material-symbols-outlined symbol purple-symbol">
+                        savings
+                    </span>
+                </div>
+
+                <div class="amount">₹24,500</div>
+
+                <div class="card-foot">
+                    70% of income
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- ================= CATEGORY REPORT ================= -->
+        <section class="panel">
+
+            <div class="panel-head">
+
+                <div>
+                    <h2>Expenses by category</h2>
+
+                    <p class="sub">
+                        October 2026 · Sample data
+                    </p>
+                </div>
+
+                <span class="material-symbols-outlined">
+                    analytics
+                </span>
+
+            </div>
+
+            <!-- Food and Groceries -->
+            <div class="budget-row">
+
+                <div class="budget-icon">
+                    <span class="material-symbols-outlined">
+                        grocery
+                    </span>
+                </div>
+
+                <div class="budget-info">
+
+                    <div class="budget-title">
+                        <strong>Food & groceries</strong>
+                        <span>₹3,200</span>
+                    </div>
+
+                    <div class="progress">
+                        <span class="green"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Transport -->
+            <div class="budget-row">
+
+                <div class="budget-icon travel">
+                    <span class="material-symbols-outlined">
+                        directions_car
+                    </span>
+                </div>
+
+                <div class="budget-info">
+
+                    <div class="budget-title">
+                        <strong>Transport</strong>
+                        <span>₹1,500</span>
+                    </div>
+
+                    <div class="progress">
+                        <span class="travel-fill"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Shopping -->
+            <div class="budget-row">
+
+                <div class="budget-icon shop">
+                    <span class="material-symbols-outlined">
+                        shopping_bag
+                    </span>
+                </div>
+
+                <div class="budget-info">
+
+                    <div class="budget-title">
+                        <strong>Shopping</strong>
+                        <span>₹2,800</span>
+                    </div>
+
+                    <div class="progress">
+                        <span class="purple-fill"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Bills and Utilities -->
+            <div class="budget-row">
+
+                <div class="budget-icon bill">
+                    <span class="material-symbols-outlined">
+                        receipt_long
+                    </span>
+                </div>
+
+                <div class="budget-info">
+
+                    <div class="budget-title">
+                        <strong>Bills & utilities</strong>
+                        <span>₹3,000</span>
+                    </div>
+
+                    <div class="progress">
+                        <span class="orange-fill"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= FOOTER ================= -->
+        <footer>
+
+            <span>
+                © 2026 ExpenseFlow. Personal finance, made simple.
+            </span>
+
+            <span>
+                Static demo · Sample figures only
+            </span>
+
+        </footer>
+
+    </main>
+
+</body>
+</html>
+```

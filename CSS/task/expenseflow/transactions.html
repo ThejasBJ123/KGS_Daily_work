@@ -1,0 +1,483 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ExpenseFlow | Transactions</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Material Symbols -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+
+    <style>
+        /* Google Material Symbols */
+        .material-symbols-outlined {
+            font-family: "Material Symbols Outlined";
+            font-weight: normal;
+            font-style: normal;
+            font-size: 22px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-feature-settings: "liga";
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Sidebar icons */
+        .sidebar nav a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        /* Topbar */
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .date {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .icon-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background: transparent;
+            color: inherit;
+        }
+
+        /* Table */
+        .table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        .table-wrap table {
+            width: 100%;
+            border-collapse: collapse;
+            white-space: nowrap;
+        }
+
+        .table-wrap th,
+        .table-wrap td {
+            padding: 14px 12px;
+            text-align: left;
+        }
+
+        .table-wrap th {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Transaction amounts */
+        .positive {
+            color: #159568;
+            font-weight: 600;
+        }
+
+        .negative {
+            color: #dc5353;
+            font-weight: 600;
+        }
+
+        /* Status labels */
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status.completed {
+            color: #16845e;
+            background: #e8f7ef;
+        }
+
+        .status.pending {
+            color: #a96a10;
+            background: #fff4df;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 520px) {
+            .topbar {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .top-actions {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+
+        <!-- Brand -->
+        <a class="brand" href="index.html">
+            <span class="logo">E</span>
+            <span>Expense<span>Flow</span></span>
+        </a>
+
+        <!-- Workspace -->
+        <p class="label">WORKSPACE</p>
+
+        <nav>
+            <a href="index.html">
+                <span class="material-symbols-outlined nav-icon">
+                    grid_view
+                </span>
+                Dashboard
+            </a>
+
+            <a class="active" href="transactions.html">
+                <span class="material-symbols-outlined nav-icon">
+                    swap_horiz
+                </span>
+                Transactions
+            </a>
+
+            <a href="budgets.html">
+                <span class="material-symbols-outlined nav-icon">
+                    pie_chart
+                </span>
+                Budgets
+            </a>
+
+            <a href="reports.html">
+                <span class="material-symbols-outlined nav-icon">
+                    bar_chart
+                </span>
+                Reports
+            </a>
+        </nav>
+
+        <!-- Preferences -->
+        <p class="label preferences">PREFERENCES</p>
+
+        <nav>
+            <a href="goals.html">
+                <span class="material-symbols-outlined nav-icon">
+                    savings
+                </span>
+                Savings goals
+            </a>
+
+            <a href="settings.html">
+                <span class="material-symbols-outlined nav-icon">
+                    settings
+                </span>
+                Settings
+            </a>
+        </nav>
+
+        <!-- Sidebar Bottom -->
+        <div class="sidebar-bottom">
+
+            <div class="help">
+
+                <div class="help-icon">
+                    <span class="material-symbols-outlined">
+                        help
+                    </span>
+                </div>
+
+                <strong>Need some help?</strong>
+
+                <p>
+                    Make the most of your money with smart budgeting.
+                </p>
+
+                <a href="budgets.html">
+                    Explore budgets
+                    <span class="material-symbols-outlined">
+                        north_east
+                    </span>
+                </a>
+
+            </div>
+
+            <!-- Profile -->
+            <div class="profile">
+
+                <div class="avatar">TB</div>
+
+                <div>
+                    <strong>Your Profile</strong>
+                    <small>Personal account</small>
+                </div>
+
+                <span class="material-symbols-outlined dots">
+                    more_horiz
+                </span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main>
+
+        <!-- Topbar -->
+        <header class="topbar">
+
+            <div class="breadcrumb">
+                Pages　/　<strong>Transactions</strong>
+            </div>
+
+            <div class="top-actions">
+
+                <span class="date">
+                    <span class="material-symbols-outlined">
+                        calendar_month
+                    </span>
+                    October 2026
+                </span>
+
+                <button class="icon-button"
+                        type="button"
+                        aria-label="Notifications">
+                    <span class="material-symbols-outlined bell">
+                        notifications
+                    </span>
+                </button>
+
+                <span class="avatar">TB</span>
+
+            </div>
+
+        </header>
+
+        <!-- Welcome Section -->
+        <section class="welcome">
+
+            <div>
+                <p class="eyebrow">EXPENSEFLOW WORKSPACE</p>
+
+                <h1>Transactions</h1>
+
+                <p class="subtitle">
+                    Manage and review your personal finances.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- ================= TRANSACTIONS TABLE ================= -->
+        <section class="panel">
+
+            <div class="panel-head">
+
+                <div>
+                    <h2>All transactions</h2>
+
+                    <p class="sub">
+                        Your income and expense history
+                    </p>
+                </div>
+
+                <a class="primary" href="index.html">
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                    </span>
+                    Dashboard
+                </a>
+
+            </div>
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>TRANSACTION</th>
+                            <th>CATEGORY</th>
+                            <th>DATE</th>
+                            <th>PAYMENT METHOD</th>
+                            <th>AMOUNT</th>
+                            <th>STATUS</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <!-- Monthly Salary -->
+                        <tr>
+                            <td>
+                                <strong>Monthly salary</strong>
+                            </td>
+
+                            <td>Salary</td>
+                            <td>Oct 10, 2026</td>
+                            <td>Bank transfer</td>
+
+                            <td class="positive">
+                                +₹35,000.00
+                            </td>
+
+                            <td>
+                                <span class="status completed">
+                                    <span class="material-symbols-outlined">
+                                        check_circle
+                                    </span>
+                                    Completed
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- Grocery Shopping -->
+                        <tr>
+                            <td>
+                                <strong>Grocery shopping</strong>
+                            </td>
+
+                            <td>Food</td>
+                            <td>Oct 09, 2026</td>
+                            <td>UPI</td>
+
+                            <td class="negative">
+                                −₹1,200.00
+                            </td>
+
+                            <td>
+                                <span class="status completed">
+                                    <span class="material-symbols-outlined">
+                                        check_circle
+                                    </span>
+                                    Completed
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- Cab Ride -->
+                        <tr>
+                            <td>
+                                <strong>Cab ride</strong>
+                            </td>
+
+                            <td>Transport</td>
+                            <td>Oct 08, 2026</td>
+                            <td>UPI</td>
+
+                            <td class="negative">
+                                −₹800.00
+                            </td>
+
+                            <td>
+                                <span class="status completed">
+                                    <span class="material-symbols-outlined">
+                                        check_circle
+                                    </span>
+                                    Completed
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- Electricity Bill -->
+                        <tr>
+                            <td>
+                                <strong>Electricity bill</strong>
+                            </td>
+
+                            <td>Bills</td>
+                            <td>Oct 06, 2026</td>
+                            <td>Debit card</td>
+
+                            <td class="negative">
+                                −₹1,650.00
+                            </td>
+
+                            <td>
+                                <span class="status completed">
+                                    <span class="material-symbols-outlined">
+                                        check_circle
+                                    </span>
+                                    Completed
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- Online Purchase -->
+                        <tr>
+                            <td>
+                                <strong>Online purchase</strong>
+                            </td>
+
+                            <td>Shopping</td>
+                            <td>Oct 04, 2026</td>
+                            <td>Credit card</td>
+
+                            <td class="negative">
+                                −₹2,300.00
+                            </td>
+
+                            <td>
+                                <span class="status pending">
+                                    <span class="material-symbols-outlined">
+                                        schedule
+                                    </span>
+                                    Pending
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- ================= FOOTER ================= -->
+        <footer>
+
+            <span>
+                © 2026 ExpenseFlow. Personal finance, made simple.
+            </span>
+
+            <span>
+                Static demo · Sample figures only
+            </span>
+
+        </footer>
+
+    </main>
+
+</body>
+</html>
+```
