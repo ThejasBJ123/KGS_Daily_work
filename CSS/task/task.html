@@ -1,36 +1,108 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
+
+    <title>Image Text Wrapping</title>
 
     <style>
-        .nav-links {
-            display: flex;
-            gap: 15px;
+
+        body {
+            font-family: Georgia, serif;
+            margin: 20px;
         }
 
-        .nav-links a {
-            color: rgb(255, 254, 254);
-            padding: 10px 15px;
-            border-radius: 8px;
-            background-color: black;
+        .box {
+            width: 500px;
+            height: 400px;
+            background-color: rgb(132, 150, 150);
+            padding: 20px;
+            overflow: auto;
         }
 
+        h1 {
+            color: black;
+            font-size: 36px;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        .image {
+            float: left;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 15px;
+            margin-bottom: 5px;
+        }
+
+        .text {
+            color: black;
+            font-size: 20px;
+            line-height: 1.5;
+            text-align: justify;
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        button{
+            border: none;
+        }
+
+        button:hover{
+            cursor: pointer;
+            border:2px solid black;
+            color: white;
+            background-color: lightblue;
+        }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <div class="nav-links">
-            <a>Home</a>
-            <a>About Us</a>
-            <a>Contact Us</a>
-        </div>
+    <div class="box">
 
-    </header>
+        <h1>Abhi is Absent Tomorrow</h1>
+
+        <p class="text">
+            <img
+                src="download.jpg"
+                alt="Prisoner image"
+                class="image"
+            >
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Provident cum explicabo, fuga vero at suscipit,
+            perspiciatis veniam voluptatibus, voluptatum ad assumenda
+            animi? Ut blanditiis eaque neque aspernatur quo quaerat
+            doloribus fuga illum voluptatum voluptate, necessitatibus
+            nam atque, incidunt repellat culpa delectus assumenda
+            repellendus quibusdam! Assumenda asperiores exercitationem
+            officiis modi illum quos nemo fugit ad, totam, placeat
+            ratione sunt laudantium dignissimos ex eligendi iusto
+            laborum dolor omnis eum architecto. Suscipit minus commodi
+            deleniti placeat repudiandae debitis doloribus explicabo
+            dolorem tempora, delectus nihil consectetur corrupti
+            impedit. Cumque sunt assumenda ab similique quibusdam,
+            adipisci quis labore excepturi, dolor aliquid repudiandae
+            mollitia. Esse aspernatur ex aut provident facilis natus
+            accusamus rem dolor rerum, explicabo reiciendis, et adipisci
+            est cumque earum a saepe voluptate dignissimos consectetur
+            reprehenderit? Magni vitae voluptatem veritatis fuga
+            asperiores earum est, at explicabo sunt quasi, a debitis
+            corporis doloribus fugit? A eaque nobis ad! Nobis dolor
+            illum dolore ipsam magnam, rem odit, ipsum porro sequi
+            vel sunt expedita molestias animi similique aperiam harum?
+            <a href="#">Youtube</a>
+            
+            <button>Login</button>
+        </p>
+
+    </div>
 
 </body>
 </html>

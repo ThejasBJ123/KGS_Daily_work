@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 100px;
+            width:100px ;
+            margin:50px;
+            background-color:purple ;
+            transition: 5s;
+        }
+        .box:hover{
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            cursor: pointer;
+
+        }
+        button {
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(1, 28, 87, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <button>Submit</button>
+    
+</body>
+</html>
